@@ -1,12 +1,15 @@
 [package]
-name = "ascii_image"
+name = "ascii-image"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+repository = "https://github.com/Vaaris16/ascii_image.git"
 
 [[bin]]
-name = "ascii-converter-image"
+name = "ascii-image"
 path = "src/main.rs"
 
 [dependencies]
+clap = { version = "4.5.58", features = ["derive"] }
 image = "0.24"
 rusttype = "0.9"

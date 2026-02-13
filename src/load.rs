@@ -5,7 +5,7 @@ pub fn load_image(path: &str) -> RgbImage {
     image::open(path).expect("failed to load image").to_rgb8()
 }
 
-pub fn load_font(font_name: &str) -> Font<'static> {
-    let font_data = std::fs::read(font_name).expect("failed to read font");
-    Font::try_from_vec(font_data).expect("invalid font type")
+pub fn load_font() -> Font<'static> {
+    let font_data: &[u8] = include_bytes!("../JetBrainsMonoNL-Regular.ttf");
+    Font::try_from_bytes(font_data).expect("invalid font")
 }

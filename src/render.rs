@@ -1,7 +1,7 @@
 use image::{Rgb, RgbImage};
 use rusttype::{Font, Scale};
 
-use crate::constants::*;
+use crate::config::*;
 
 pub fn draw_char(
     font: &Font,
@@ -10,20 +10,19 @@ pub fn draw_char(
     out: &mut RgbImage,
     base_x: u32,
     base_y: u32,
+    config: &Config,
 ) {
-    let scale = Scale::uniform(FONTSIZE);
+    let scale = Scale::uniform(config.font_size);
     let glyph = font.glyph(ch).scaled(scale).positioned(rusttype::point(
         base_x as f32,
-        (base_y + CHARH as u32) as f32,
+        (base_y + config.char_h as u32) as f32,
     ));
 
     if let Some(bb) = glyph.pixel_bounding_box() {
         glyph.draw(|px, py, v| {
-            // convert px/py FIRST
             let x = bb.min.x + px as i32;
             let y = bb.min.y + py as i32;
 
-            // bounds check in signed space
             if x >= 0 && y >= 0 {
                 let x = x as u32;
                 let y = y as u32;
