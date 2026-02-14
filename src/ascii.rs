@@ -8,12 +8,12 @@ fn gamma_correct(l: f32) -> f32 {
     (l / 255.0).powf(2.2) * 255.0
 }
 
-pub fn ascii_char(r: u8, g: u8, b: u8) -> char {
+pub fn ascii_char(chars: &str, r: u8, g: u8, b: u8) -> char {
     let brightness = luminance(r, g, b);
     let brightness = gamma_correct(brightness);
 
     let t = (brightness / 255.0).clamp(0.0, 1.0);
-    let index = (t * (CHARS.len() - 1) as f32).round() as usize;
+    let index = (t * (chars.len() - 1) as f32).round() as usize;
 
-    CHARS.chars().nth(index).unwrap()
+    chars.chars().nth(index).unwrap()
 }

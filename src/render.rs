@@ -11,6 +11,7 @@ pub fn draw_char(
     base_x: u32,
     base_y: u32,
     config: &Config,
+    greyscale: bool,
 ) {
     let scale = Scale {
         x: config.char_w as f32,
@@ -32,15 +33,17 @@ pub fn draw_char(
                 let y = y as u32;
 
                 if x < out.width() && y < out.height() {
-                    out.put_pixel(
-                        x,
-                        y,
+                    let pixel = if !greyscale {
                         Rgb([
                             (color[0] as f32 * v) as u8,
                             (color[1] as f32 * v) as u8,
                             (color[2] as f32 * v) as u8,
-                        ]),
-                    );
+                        ])
+                    } else {
+                        Rgb([255, 255, 255])
+                    };
+
+                    out.put_pixel(x, y, pixel);
                 }
             }
         });
