@@ -10,13 +10,13 @@ the result as an image.
 ## Installation
 
 ```bash
-cargo install ascii-image
+cargo install ascii-image-cli
 ```
 
 ## Usage
 
 ```bash
-ascii-image --input  [options]
+ascii-image-cli --input  [options]
 ```
 
 # Options
