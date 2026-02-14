@@ -21,7 +21,7 @@ exclude = [
 
 
 [[bin]]
-name = "ascii-image"
+name = "ascii-image-cli"
 path = "src/main.rs"
 
 [dependencies]
