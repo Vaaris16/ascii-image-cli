@@ -29,21 +29,21 @@ ascii-image --input  [OPTIONS]
 | `--font-size <FONT_SIZE>` | `-f`  | Font size for the ASCII characters             | `15`        |
 | `--help`                  | `-h`  | Print help information                         | -           |
 
-<div align="center">
+<div align="align-start">
   <h1>
     paris image
   <h1/>
   <img src="./examples/image-1-complex-paris/paris.png" alt="Description"/>
 </div>
 
-<div align="center">
+<div align="align-start">
   <h1>
     gojo image
   <h1/>
   <img src="./examples/image-2-complex-jjk-gojo/gojo.png" alt="Description"/>
 </div>
 
-<div align="center">
+<div align="align-start">
   <h1>
     sakuna image
   <h1/>
