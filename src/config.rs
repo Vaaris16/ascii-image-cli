@@ -1,5 +1,3 @@
-use std::char;
-
 #[derive(Debug, Clone)]
 pub struct Config {
     pub step: usize,

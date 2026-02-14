@@ -1,25 +1,25 @@
-# [rust] ascii image generator
+# [RUST] ASCII IMAGE GENERATOR
 
 a fast rust-based cli tool that converts images into ascii art and renders
 the result as an image.
 
-## requirements
+## Requirements
 
 - rust (latest stable)
 
-## installation
+## Installation
 
 ```bash
 cargo install ascii-image
 ```
 
-## usage
+## Usage
 
 ```bash
 ascii-image --input  [options]
 ```
 
-# options
+# Options
 
 | option                    | short | description       | default     |
 | ------------------------- | ----- | ----------------- | ----------- |

@@ -1,5 +1,3 @@
-use crate::config::*;
-
 fn luminance(r: u8, g: u8, b: u8) -> f32 {
     0.2126 * r as f32 + 0.7152 * g as f32 + 0.0722 * b as f32
 }
