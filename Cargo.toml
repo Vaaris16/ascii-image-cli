@@ -9,6 +9,17 @@ readme = "README.md"
 keywords = ["ascii", "image", "cli"]
 categories = ["command-line-utilities"]
 
+exclude = [
+  "examples/**",
+  "assets/**",
+  "*.png",
+  "*.jpg",
+  "*.jpeg",
+  "*.gz",
+  "target/**"
+]
+
+
 [[bin]]
 name = "ascii-image"
 path = "src/main.rs"
