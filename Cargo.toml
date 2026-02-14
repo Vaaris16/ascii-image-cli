@@ -2,8 +2,12 @@
 name = "ascii-image"
 version = "0.1.0"
 edition = "2024"
+description = "Convert images into ASCII art using a fast Rust CLI"
 license = "MIT"
-repository = "https://github.com/Vaaris16/ascii_image.git"
+repository = "https://github.com/YOUR_USERNAME/ascii_image"
+readme = "README.md"
+keywords = ["ascii", "image", "cli"]
+categories = ["command-line-utilities"]
 
 [[bin]]
 name = "ascii-image"
