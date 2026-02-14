@@ -1,51 +1,65 @@
-# [RUST] ASCII IMAGE GENERATOR
+# [rust] ascii image generator
 
-A fast Rust-based CLI tool that converts images into ASCII art and renders
+a fast rust-based cli tool that converts images into ascii art and renders
 the result as an image.
 
-## Requirements
+## requirements
 
-- Rust (latest stable)
+- rust (latest stable)
 
-## Installation
+## installation
 
 ```bash
 cargo install ascii-image
 ```
 
-## Usage
+## usage
 
 ```bash
-ascii-image --input  [OPTIONS]
+ascii-image --input  [options]
 ```
 
-# Options
+# options
 
-| Option                    | Short | Description                                    | Default     |
-| ------------------------- | ----- | ---------------------------------------------- | ----------- |
-| `--input <INPUT>`         | `-i`  | Path to the input image file (required)        | -           |
-| `--output <OUTPUT>`       | `-o`  | Path to save the ASCII art output              | `ascii.png` |
-| `--step <STEP>`           | `-s`  | Pixel sampling step size (lower = more detail) | `8`         |
-| `--font-size <FONT_SIZE>` | `-f`  | Font size for the ASCII characters             | `15`        |
-| `--help`                  | `-h`  | Print help information                         | -           |
+| option                    | short | description       | default     |
+| ------------------------- | ----- | ----------------- | ----------- |
+| `--input <input>`         | `-i`  | input image file  | -           |
+| `--output <output>`       | `-o`  | output ascii file | `ascii.png` |
+| `--step <step>`           | `-s`  | pixel step size   | `8`         |
+| `--font-size <font_size>` | `-f`  | font size         | `15`        |
+| `--charset <charset>`     | `-c`  | character set     | `simple`    |
+| `--print-chars`           |       | print to terminal | false       |
+| `--greyscale`             |       | greyscale mode    | false       |
+| `--help`                  | `-h`  | show help         | -           |
 
-<div align="align-start">
-  <h1>
-    paris image
-  <h1/>
-  <img src="./examples/image-1-complex-paris/paris.png" alt="Description"/>
-</div>
+# Charset Presets
 
-<div align="align-start">
-  <h1>
-    gojo image
-  <h1/>
-  <img src="./examples/image-2-complex-jjk-gojo/gojo.png" alt="Description"/>
-</div>
+| Preset        | Characters                                                              |
+| ------------- | ----------------------------------------------------------------------- |
+| simple        | `@#%*+=-:.`                                                             |
+| numbers       | `9876543210`                                                            |
+| numbers_rev   | `0123456789`                                                            |
+| binary        | `10`                                                                    |
+| binary_rev    | `01`                                                                    |
+| letters_lower | `mnhqdykz`                                                              |
+| letters_upper | `MNHQDYKZ`                                                              |
+| symbols       | `$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,'\"^.` |
+| matrix        | `` `01 ``                                                               |
+| extended      | `@%#*+=-:.`                                                             |
+| ascii_dense   | `$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft`                              |
 
-<div align="align-start">
-  <h1>
-    sakuna image
-  <h1/>
-  <img src="./examples/image-3-complex-jjk-sakuna/sakuna.png" alt="Description"/>
-</div>
+## Charset Examples
+
+| Charset         | Example                                                            |
+| --------------- | ------------------------------------------------------------------ |
+| `simple`        | <img src="examples/simple/simple.png" width="260" />               |
+| `numbers`       | <img src="examples/numbers/numbers.png" width="260" />             |
+| `numbers_rev`   | <img src="examples/numbers_rev/numbers_rev.png" width="260" />     |
+| `binary`        | <img src="examples/binary/binary.png" width="260" />               |
+| `binary_rev`    | <img src="examples/binary_rev/binary_rev.png" width="260" />       |
+| `letters_lower` | <img src="examples/letters_lower/letter_lower.png" width="260" />  |
+| `letters_upper` | <img src="examples/letters_upper/letters_upper.png" width="260" /> |
+| `matrix`        | <img src="examples/matrix/matrix.png" width="260" />               |
+| `extended`      | <img src="examples/extended/extended.png" width="260" />           |
+| `ascii_dense`   | <img src="examples/ascii_dense/ascii_dense.png" width="260" />     |
+| `symbols`       | <img src="examples/symbols/symbols.png" width="260" />             |
