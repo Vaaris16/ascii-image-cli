@@ -12,7 +12,11 @@ pub fn draw_char(
     base_y: u32,
     config: &Config,
 ) {
-    let scale = Scale::uniform(config.font_size);
+    let scale = Scale {
+        x: config.char_w as f32,
+        y: config.char_h as f32,
+    };
+
     let glyph = font.glyph(ch).scaled(scale).positioned(rusttype::point(
         base_x as f32,
         (base_y + config.char_h as u32) as f32,

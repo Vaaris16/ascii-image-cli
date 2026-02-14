@@ -35,7 +35,6 @@ fn main() {
 
     let config = Config {
         step: args.step,
-        font_size: args.font_size,
         char_w: (args.font_size * 0.6) as usize,
         char_h: (args.font_size * 1.2) as usize,
     };
@@ -47,7 +46,9 @@ fn main() {
     let width = w as usize;
     let height = h as usize;
 
-    let mut out = RgbImage::new(width as u32, height as u32);
+    let out_w = ((width / config.step) * config.char_w) as u32;
+    let out_h = ((height / config.step) * config.char_h) as u32;
+    let mut out = RgbImage::new(out_w as u32, out_h as u32);
 
     for y in (0..height).step_by(config.step) {
         for x in (0..width).step_by(config.step) {
@@ -56,11 +57,15 @@ fn main() {
 
             let ch = ascii_char(r, g, b);
 
-            let base_x = x as u32;
-            let base_y = y as u32;
+            let base_x = ((x / config.step) * config.char_w) as u32;
+            let base_y = ((y / config.step) * config.char_h) as u32;
 
             draw_char(&font, ch, [r, g, b], &mut out, base_x, base_y, &config);
+
+            print!("{}", ch)
         }
+
+        println!()
     }
 
     out.save(&args.output).expect("failed to save image");

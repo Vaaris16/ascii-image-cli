@@ -65,7 +65,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ascii_image"
+name = "ascii-image"
 version = "0.1.0"
 dependencies = [
  "clap",

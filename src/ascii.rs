@@ -1,9 +1,19 @@
 use crate::config::*;
 
-pub fn ascii_char(r: u8, g: u8, b: u8) -> char {
-    let brightness = ((0.299 * r as f32 + 0.587 * g as f32 + 0.114 * b as f32) * 1.5).min(255.0);
+fn luminance(r: u8, g: u8, b: u8) -> f32 {
+    0.2126 * r as f32 + 0.7152 * g as f32 + 0.0722 * b as f32
+}
 
-    let index = (brightness as usize * (CHARS.len() - 1)) / 255;
+fn gamma_correct(l: f32) -> f32 {
+    (l / 255.0).powf(2.2) * 255.0
+}
+
+pub fn ascii_char(r: u8, g: u8, b: u8) -> char {
+    let brightness = luminance(r, g, b);
+    let brightness = gamma_correct(brightness);
+
+    let t = (brightness / 255.0).clamp(0.0, 1.0);
+    let index = (t * (CHARS.len() - 1) as f32).round() as usize;
 
     CHARS.chars().nth(index).unwrap()
 }
