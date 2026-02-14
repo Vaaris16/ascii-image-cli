@@ -30,5 +30,22 @@ ascii-image --input  [OPTIONS]
 | `--help`                  | `-h`  | Print help information                         | -           |
 
 <div align="center">
+  <h1>
+    paris image
+  <h1/>
   <img src="./examples/image-1-complex-paris/paris.png" alt="Description"/>
+</div>
+
+<div align="center">
+  <h1>
+    gojo image
+  <h1/>
+  <img src="./examples/image-2-jjk-gojo/gojo.png" alt="Description"/>
+</div>
+
+<div align="center">
+  <h1>
+    sakuna image
+  <h1/>
+  <img src="./examples/image-3-jjk-sakuna/sakuna.png" alt="Description"/>
 </div>
