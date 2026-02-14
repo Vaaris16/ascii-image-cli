@@ -40,12 +40,12 @@ ascii-image --input  [OPTIONS]
   <h1>
     gojo image
   <h1/>
-  <img src="./examples/image-2-jjk-gojo/gojo.png" alt="Description"/>
+  <img src="./examples/image-2-complex-jjk-gojo/gojo.png" alt="Description"/>
 </div>
 
 <div align="center">
   <h1>
     sakuna image
   <h1/>
-  <img src="./examples/image-3-jjk-sakuna/sakuna.png" alt="Description"/>
+  <img src="./examples/image-3-complex-jjk-sakuna/sakuna.png" alt="Description"/>
 </div>
